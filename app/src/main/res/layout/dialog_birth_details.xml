@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Input for Year -->
+    <EditText
+        android:id="@+id/input_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Year (e.g., 1990)"
+        android:inputType="number" />
+
+    <!-- Input for Month -->
+    <EditText
+        android:id="@+id/input_month"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Month (1-12)"
+        android:inputType="number" />
+
+    <!-- Input for Date -->
+    <EditText
+        android:id="@+id/input_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Day of the Month (1-31)"
+        android:inputType="number" />
+
+    <!-- Input for Hours -->
+    <EditText
+        android:id="@+id/input_hours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hours (0-23)"
+        android:inputType="number" />
+
+    <!-- Input for Minutes -->
+    <EditText
+        android:id="@+id/input_minutes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Minutes (0-59)"
+        android:inputType="number" />
+
+</LinearLayout>
+
+

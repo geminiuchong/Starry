@@ -1,0 +1,68 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="Theme.Group3_Starry" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/light_pink</item>
+        <item name="colorPrimaryDark">@color/orange</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <item name="colorPrimaryVariant">@color/orange</item>
+        <item name="colorOnPrimary">@color/light_yellow</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/dark_pink</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <!-- No ActionBar variant of the base theme -->
+    <style name="Theme.Group3_Starry.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/pink</item>
+        <item name="colorPrimaryDark">@color/dark_pink</item>
+        <item name="colorAccent">@color/skin</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- AppBar overlay theme -->
+    <style name="Theme.Group3_Starry.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <!-- Popup overlay theme -->
+    <style name="Theme.Group3_Starry.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
+
+
+    <!--<resources xmlns:tools="http://schemas.android.com/tools">-->
+<!--    &lt;!&ndash; Base application theme &ndash;&gt;-->
+<!--    <style name="Theme.Group3_Starry" parent="Theme.AppCompat.Light.DarkActionBar">-->
+<!--        &lt;!&ndash; Primary brand color &ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/purple_500</item>-->
+<!--        <item name="colorPrimaryDark">@color/purple_700</item>-->
+<!--        <item name="colorAccent">@color/teal_200</item>-->
+<!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
+<!--        <item name="colorOnPrimary">@color/white</item>-->
+
+<!--        &lt;!&ndash; Secondary brand color &ndash;&gt;-->
+<!--        <item name="colorSecondary">@color/teal_200</item>-->
+<!--        <item name="colorSecondaryVariant">@color/teal_700</item>-->
+<!--        <item name="colorOnSecondary">@color/black</item>-->
+
+<!--        &lt;!&ndash; Status bar color &ndash;&gt;-->
+<!--        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>-->
+
+<!--        &lt;!&ndash; Customize your theme here &ndash;&gt;-->
+<!--    </style>-->
+
+<!--    &lt;!&ndash; No ActionBar variant of the base theme &ndash;&gt;-->
+<!--    <style name="Theme.Group3_Starry.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">-->
+<!--        <item name="colorPrimary">@color/purple_500</item>-->
+<!--        <item name="colorPrimaryDark">@color/purple_700</item>-->
+<!--        <item name="colorAccent">@color/teal_200</item>-->
+<!--        <item name="windowActionBar">false</item>-->
+<!--        <item name="windowNoTitle">true</item>-->
+<!--    </style>-->
+
+<!--    &lt;!&ndash; AppBar overlay theme &ndash;&gt;-->
+<!--    <style name="Theme.Group3_Starry.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />-->
+
+<!--    &lt;!&ndash; Popup overlay theme &ndash;&gt;-->
+<!--    <style name="Theme.Group3_Starry.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
+
+<!--</resources>-->

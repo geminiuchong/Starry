@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.group3_starry.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_match"
+        android:name="com.example.group3_starry.ui.match.MatchFragment"
+        android:label="@string/menu_match"
+        tools:layout="@layout/fragment_match" />
+
+    <fragment
+        android:id="@+id/nav_tarot"
+        android:name="com.example.group3_starry.ui.tarot.TarotFragment"
+        android:label="@string/menu_tarot"
+        tools:layout="@layout/fragment_tarot" />
+    <fragment
+        android:id="@+id/nav_sign_out"
+        android:name="com.example.group3_starry.ui.signout.SignOutFragment"
+        android:label="Sign Out"
+        tools:layout="@layout/fragment_sign_out" />
+
+</navigation>

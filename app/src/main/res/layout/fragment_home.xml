@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+<!--        &lt;!&ndash; Profile Section &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/user_name"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Martin Lee"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="18sp"-->
+<!--            android:layout_gravity="center_horizontal" />-->
+
+        <!-- Zodiac Spinner -->
+        <Spinner
+            android:id="@+id/zodiacSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp" />
+
+        <!-- Planets Today Section -->
+        <TextView
+            android:id="@+id/planetsTodayTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Planets Today"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal" />
+
+        <ImageView
+            android:id="@+id/planet_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/sample_planet" />
+
+
+
+        <!-- You Today Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You Today"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tip for the Day"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/tipOfTheDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brave against sheep, but himself a sheep against the brave."
+            android:textSize="16sp"
+            android:layout_marginTop="4dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lucky Number"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/textNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Lucky Number:"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/tipOfTheDay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+<!--        &lt;!&ndash; Health Section &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/healthTitle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Health"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="16sp"-->
+<!--            android:layout_marginTop="8dp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/healthDesc"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="General Characteristics: ..."-->
+<!--            android:textSize="14sp"-->
+<!--            android:layout_marginTop="4dp" />-->
+
+<!--        &lt;!&ndash; Finance Section &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/financeTitle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Finance"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="16sp"-->
+<!--            android:layout_marginTop="8dp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/financeDesc"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="General Characteristics: ..."-->
+<!--            android:textSize="14sp"-->
+<!--            android:layout_marginTop="4dp" />-->
+
+<!--        &lt;!&ndash; Relationship Section &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/relationshipTitle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Relationship"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="16sp"-->
+<!--            android:layout_marginTop="8dp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/relationshipDesc"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="General Characteristics: ..."-->
+<!--            android:textSize="14sp"-->
+<!--            android:layout_marginTop="4dp" />-->
+
+
+    </LinearLayout>
+</ScrollView>
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".ui.home.HomeFragment">-->
+
+<!--    &lt;!&ndash; Zodiac Sign Selector &ndash;&gt;-->
+<!--    <Spinner-->
+<!--        android:id="@+id/zodiacSpinner"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginTop="16dp" />-->
+
+<!--    &lt;!&ndash; Horoscope Prediction &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/text_home"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:text="@string/horoscope_prediction"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/zodiacSpinner"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--    &lt;!&ndash; Lucky Colors &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/textColor"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:text="Lucky Colors:"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/text_home"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--    &lt;!&ndash; Lucky Number &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/textNumber"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:text="Lucky Number:"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/textColor"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--    &lt;!&ndash; Mood &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/textStrength"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:text="Mood:"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/textNumber"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--    &lt;!&ndash; Lucky Time &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/textWeakness"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:text="Lucky Time:"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/textStrength"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--    &lt;!&ndash; Area 1 Description &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/textArea1Title"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:text="Title:"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/textWeakness"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textArea1Desc"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:text="Description:"-->
+<!--        android:textSize="14sp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/textArea1Title"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
