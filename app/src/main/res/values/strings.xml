@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Group3_Starry</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="horoscope_prediction">Horoscope Prediction</string>
+    <string name="lucky_colors">Lucky Colors</string>
+    <string name="lucky_numbers">Lucky Numbers</string>
+    <string name="strengths">Strengths</string>
+    <string name="weaknesses">Weaknesses</string>
+</resources>
