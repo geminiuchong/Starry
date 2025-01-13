@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="?attr/actionBarSize"
+    android:padding="16dp">
+
+    <!-- Cards Area -->
+    <FrameLayout
+        android:id="@+id/cardsArea"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/light_pink" />
+
+    <!-- Get Cards Button -->
+    <Button
+        android:id="@+id/getCardsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Cards"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:backgroundTint="@color/light_pink" />
+
+    <Button
+        android:id="@+id/endGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Game"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/light_pink" />
+
+    <!-- Loading Spinner -->
+    <ProgressBar
+        android:id="@+id/loadingSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <!-- Chat Area -->
+    <ScrollView
+        android:id="@+id/chatScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        android:scrollbars="vertical"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/chatArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:divider="?android:dividerVertical"
+            android:showDividers="middle"/>
+    </ScrollView>
+
+    <!-- User Input -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/userInputField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter your question here"
+            android:padding="8dp"
+            android:background="@drawable/edittext_background" />
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            android:backgroundTint="@color/light_pink"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+</LinearLayout>
+
+<!--<LinearLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    android:paddingTop="?attr/actionBarSize"-->
+<!--    android:padding="16dp">-->
+
+<!--    &lt;!&ndash; Cards Area &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/cardsArea"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="350dp"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:background="@color/light_pink" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/getCardsButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Get Cards"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:visibility="gone"-->
+<!--        android:backgroundTint="@color/light_pink" />-->
+
+<!--    &lt;!&ndash; Loading Spinner &ndash;&gt;-->
+<!--    <ProgressBar-->
+<!--        android:id="@+id/loadingSpinner"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:visibility="gone" />-->
+
+<!--    &lt;!&ndash; Chat Area &ndash;&gt;-->
+<!--    <ScrollView-->
+<!--        android:id="@+id/chatScrollView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:scrollbars="vertical"-->
+<!--        android:background="@color/white">-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/chatArea"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="8dp"-->
+<!--            android:divider="?android:dividerVertical"-->
+<!--            android:showDividers="middle"/>-->
+<!--    </ScrollView>-->
+
+<!--    &lt;!&ndash; User Input &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:padding="8dp">-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/userInputField"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:hint="Enter your question here"-->
+<!--            android:padding="8dp"-->
+<!--            android:background="@drawable/edittext_background" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/sendButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Send"-->
+<!--            android:backgroundTint="@color/light_pink"-->
+<!--            android:layout_marginStart="8dp" />-->
+<!--    </LinearLayout>-->
+<!--</LinearLayout>-->
+
+
+<!--<LinearLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    android:padding="16dp">-->
+
+<!--    &lt;!&ndash; Cards Area &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/cardsArea"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center"-->
+<!--        android:padding="16dp"-->
+<!--        android:background="@color/light_pink" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/getCardsButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Get Cards"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:backgroundTint="@color/light_pink" />-->
+
+<!--    &lt;!&ndash; Chat Area &ndash;&gt;-->
+<!--    <ScrollView-->
+<!--        android:id="@+id/chatScrollView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:background="@color/white">-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/chatArea"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical" />-->
+<!--    </ScrollView>-->
+
+<!--    &lt;!&ndash; User Input &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/userInputField"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:hint="Enter your question here"-->
+<!--            android:padding="8dp"-->
+<!--            android:background="@drawable/edittext_background" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/sendButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Send"-->
+<!--            android:backgroundTint="@color/light_pink" />-->
+<!--    </LinearLayout>-->
+
+<!--    &lt;!&ndash; Get Cards Button &ndash;&gt;-->
+<!--&lt;!&ndash;    <Button&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/getCardsButton"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_gravity="center_horizontal"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_marginTop="8dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:text="Get Cards"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:visibility="gone"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:backgroundTint="@color/teal_200" />&ndash;&gt;-->
+<!--</LinearLayout>-->
