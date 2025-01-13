@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <!-- Card with Play Button -->
+    <FrameLayout
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginEnd="16dp">
+
+        <!-- Tarot Card Image -->
+        <ImageView
+            android:id="@+id/tarotOptionImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/tarot_option_image"
+            android:src="@drawable/card_back" />
+
+        <!-- Play Button -->
+        <Button
+            android:id="@+id/tarotOptionPlayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:backgroundTint="@color/light_pink"
+            android:text="Play"
+            android:textStyle="bold"></Button>
+
+    </FrameLayout>
+
+    <!-- Spread Name and Description -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tarotOptionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="Three Card Spread"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tarotOptionDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="serif"
+            android:textColor="@color/dark_pink"
+            android:text="A versatile spread for understanding cause and effect."
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>
+
