@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="orange">#FB928E</color>
+    <color name="skin">#FFD8CC</color>
+    <color name="light_pink">#FBC4BF</color>
+    <color name="light_yellow">#F6F5E1</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="beige">#FFF5E1</color>
+    <color name="pink">#FFB6C1</color>
+    <color name="dark_pink">#D87392</color>
+    <color name="dark_gray">#666666</color>
+
+    <color name="pink_500">#FF69B4</color>
+    <color name="gray_600">#666666</color>
+    <!-- Profile colors -->
+    <color name="profile_background">#FFF5F5</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="text_primary">#424242</color>
+    <color name="text_secondary">#757575</color>
+    <color name="tab_selected">#FF8FAB</color>
+    <color name="tab_unselected">#BDBDBD</color>
+    <color name="table_border">#FFE4E8</color>
+    <color name="table_background">#FFFFFF</color>
+    <color name="button_pink">#FF8FAB</color>
+    <color name="ripple_color">#33FF8FAB</color>
+    <color name="tab_text">@color/text_primary</color>
+
+
+</resources>

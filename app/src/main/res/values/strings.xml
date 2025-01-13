@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Group3_Starry</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_match">Synastry</string>
+    <string name="menu_tarot">Tarot</string>
+    <string name="menu_profile">Profile</string>
+
+    <string name="horoscope_prediction">Horoscope Prediction</string>
+    <string name="lucky_colors">Lucky Colors</string>
+    <string name="lucky_numbers">Lucky Numbers</string>
+    <string name="strengths">Strengths</string>
+    <string name="weaknesses">Weaknesses</string>
+
+    <string name="planets_today">Planets Today</string>
+    <string name="health">Health</string>
+    <string name="finance">Finance</string>
+    <string name="relationship">Relationship</string>
+    <string name="no_data">No data available</string>
+    <string name="tip_of_the_day">Tip for the Day: %1$s</string>
+
+    <string name="next">Next</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="previous">Previous</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+
+    <string name="tarot_option_image">Card back</string>
+    <string name="menu_result">Result</string>
+
+</resources>

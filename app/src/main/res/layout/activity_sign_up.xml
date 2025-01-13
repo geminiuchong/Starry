@@ -1,0 +1,197 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beige">
+
+    <!-- 顶部标题栏 -->
+    <TextView
+        android:id="@+id/signUpTitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/pink"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Birth Date Label -->
+    <TextView
+        android:id="@+id/birthDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Birth Date"
+        android:textColor="@color/dark_pink"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/signUpTitleBar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Birth Date Container -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/birthDateContainer"
+        android:layout_width="406dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_input_background"
+        app:layout_constraintTop_toBottomOf="@id/birthDateLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/birthDateInput"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:hint="Select your birth date"
+            android:paddingStart="16dp"
+            android:textColor="@color/dark_pink"
+            android:textColorHint="@color/white"
+            android:background="@android:color/transparent"
+            android:focusable="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/birthDateIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/birthDateIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_calendar"
+            android:contentDescription="Select birth date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Birth Time Label -->
+    <TextView
+        android:id="@+id/birthTimeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Birth Time"
+        android:textColor="@color/dark_pink"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/birthDateContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Birth Time Container -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/birthTimeContainer"
+        android:layout_width="406dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_input_background"
+        app:layout_constraintTop_toBottomOf="@id/birthTimeLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/birthTimeInput"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:hint="Select your birth time"
+            android:paddingStart="16dp"
+            android:textColor="@color/dark_pink"
+            android:textColorHint="@color/white"
+            android:background="@android:color/transparent"
+            android:focusable="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/birthTimeIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/birthTimeIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_clock"
+            android:contentDescription="Select birth time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Birth Place Label -->
+    <TextView
+        android:id="@+id/birthPlaceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Birth Place"
+        android:textColor="@color/dark_pink"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/birthTimeContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Birth Place Container -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/birthPlaceContainer"
+        android:layout_width="406dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_input_background"
+        app:layout_constraintTop_toBottomOf="@id/birthPlaceLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/birthPlaceInput"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:hint="Select your birth place"
+            android:paddingStart="16dp"
+            android:textColor="@color/dark_pink"
+            android:textColorHint="@color/white"
+            android:background="@android:color/transparent"
+            android:focusable="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/birthPlaceIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/birthPlaceIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_location"
+            android:contentDescription="Select birth place"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 右下角箭头按钮 -->
+    <ImageView
+        android:id="@+id/nextButton"
+        android:layout_width="57dp"
+        android:layout_height="49dp"
+        android:src="@drawable/ic_arrow_right"
+        android:contentDescription="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp" />
+    <!-- 左箭头（返回按钮） -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="57dp"
+        android:layout_height="49dp"
+        android:contentDescription="Back"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
