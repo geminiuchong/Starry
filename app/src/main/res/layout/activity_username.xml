@@ -1,0 +1,92 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beige">
+
+    <!-- 顶部标题栏 -->
+    <TextView
+        android:id="@+id/emailTitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/pink"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:text="Enter Email"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 邮箱提示 -->
+    <TextView
+        android:id="@+id/emailPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter your email address"
+        android:textColor="@color/dark_pink"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/emailTitleBar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- 邮箱输入框 -->
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="406dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_input_background"
+        android:hint="Enter your email"
+        android:paddingStart="16dp"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/dark_pink"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/emailPrompt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- 邮箱规则提示 -->
+    <TextView
+        android:id="@+id/emailRules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please use a valid email format (e.g., example@mail.com)"
+        android:textColor="@color/dark_pink"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/emailInput"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- 左下角返回按钮 -->
+
+    <!-- 右下角箭头按钮 -->
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="57dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="28dp"
+        android:contentDescription="Back"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/nextButton"
+        android:layout_width="57dp"
+        android:layout_height="49dp"
+        android:contentDescription="Next"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
