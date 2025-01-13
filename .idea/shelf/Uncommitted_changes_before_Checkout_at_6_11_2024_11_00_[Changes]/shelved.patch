@@ -1,0 +1,180 @@
+Index: app/build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    alias(libs.plugins.android.application)\r\n    alias(libs.plugins.kotlin.android)\r\n}\r\n\r\nandroid {\r\n    namespace = \"com.example.group3_starry\"\r\n    compileSdk = 35\r\n\r\n    defaultConfig {\r\n        applicationId = \"com.example.group3_starry\"\r\n        minSdk = 25\r\n        targetSdk = 35\r\n        versionCode = 1\r\n        versionName = \"1.0\"\r\n\r\n        testInstrumentationRunner = \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            isMinifyEnabled = false\r\n            proguardFiles(\r\n                getDefaultProguardFile(\"proguard-android-optimize.txt\"),\r\n                \"proguard-rules.pro\"\r\n            )\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility = JavaVersion.VERSION_1_8\r\n        targetCompatibility = JavaVersion.VERSION_1_8\r\n    }\r\n    kotlinOptions {\r\n        jvmTarget = \"1.8\"\r\n    }\r\n    buildFeatures {\r\n        viewBinding = true\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    // Retrofit\r\n    implementation(libs.retrofit)\r\n    implementation(libs.retrofit.gson.converter)\r\n\r\n    implementation(libs.androidx.core.ktx)\r\n    implementation(libs.androidx.appcompat)\r\n    implementation(libs.material)\r\n    implementation(libs.androidx.constraintlayout)\r\n    implementation(libs.androidx.lifecycle.livedata.ktx)\r\n    implementation(libs.androidx.lifecycle.viewmodel.ktx)\r\n    implementation(libs.androidx.navigation.fragment.ktx)\r\n    implementation(libs.androidx.navigation.ui.ktx)\r\n    testImplementation(libs.junit)\r\n    androidTestImplementation(libs.androidx.junit)\r\n    androidTestImplementation(libs.androidx.espresso.core)\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle.kts b/app/build.gradle.kts
+--- a/app/build.gradle.kts	(revision 0a7682a2522a9fcd8f6660aa65044925e1d32637)
++++ b/app/build.gradle.kts	(date 1730919600717)
+@@ -15,6 +15,7 @@
+         versionName = "1.0"
+ 
+         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
++        buildConfigField("String", "OPENAI_API_KEY", "\"${project.findProperty("OPENAI_API_KEY") ?: ""}\"")
+     }
+ 
+     buildTypes {
+@@ -35,11 +36,17 @@
+     }
+     buildFeatures {
+         viewBinding = true
++        buildConfig = true
+     }
+ }
+ 
+ dependencies {
+ 
++    implementation(libs.okhttp)
++    implementation(libs.okhttpLoggingInterceptor)
++
++    implementation(libs.coroutinesAndroid)
++
+     // Retrofit
+     implementation(libs.retrofit)
+     implementation(libs.retrofit.gson.converter)
+Index: app/src/main/java/com/example/group3_starry/network/ApiClient.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.group3_starry.network\r\n\r\nimport retrofit2.Retrofit\r\nimport retrofit2.converter.gson.GsonConverterFactory\r\n\r\nobject ApiClient {\r\n    // Base URL for the API\r\n    private const val BASE_URL = \"https://best-daily-astrology-and-horoscope-api.p.rapidapi.com/api/\"\r\n\r\n    // Create a Retrofit instance with the base URL and Gson converter\r\n    private val retrofit: Retrofit by lazy {\r\n        Retrofit.Builder()\r\n            .baseUrl(BASE_URL)\r\n            .addConverterFactory(GsonConverterFactory.create()) // Use Gson for JSON parsing\r\n            .build()\r\n    }\r\n\r\n    // Provide the HoroscopeApiService instance\r\n    val horoscopeService: HoroscopeApiService by lazy {\r\n        retrofit.create(HoroscopeApiService::class.java)\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/group3_starry/network/ApiClient.kt b/app/src/main/java/com/example/group3_starry/network/ApiClient.kt
+--- a/app/src/main/java/com/example/group3_starry/network/ApiClient.kt	(revision 0a7682a2522a9fcd8f6660aa65044925e1d32637)
++++ b/app/src/main/java/com/example/group3_starry/network/ApiClient.kt	(date 1730919600729)
+@@ -1,22 +1,77 @@
+ package com.example.group3_starry.network
+ 
++import okhttp3.OkHttpClient
++import okhttp3.logging.HttpLoggingInterceptor
+ import retrofit2.Retrofit
+ import retrofit2.converter.gson.GsonConverterFactory
+ 
+ object ApiClient {
+-    // Base URL for the API
+-    private const val BASE_URL = "https://best-daily-astrology-and-horoscope-api.p.rapidapi.com/api/"
++    // Base URL for the Horoscope API
++    private const val BASE_URL_HOROSCOPE = "https://best-daily-astrology-and-horoscope-api.p.rapidapi.com/api/"
++    // Base URL for the GPT API
++    private const val BASE_URL_GPT = "https://api.openai.com/"
+ 
+-    // Create a Retrofit instance with the base URL and Gson converter
+-    private val retrofit: Retrofit by lazy {
++    // Shared OkHttpClient with logging for debugging
++    private val client = OkHttpClient.Builder()
++        .addInterceptor(HttpLoggingInterceptor().apply {
++            level = HttpLoggingInterceptor.Level.BODY
++        })
++        .build()
++
++    // Retrofit instance for Horoscope API
++    private val horoscopeRetrofit: Retrofit by lazy {
+         Retrofit.Builder()
+-            .baseUrl(BASE_URL)
+-            .addConverterFactory(GsonConverterFactory.create()) // Use Gson for JSON parsing
++            .baseUrl(BASE_URL_HOROSCOPE)
++            .client(client)
++            .addConverterFactory(GsonConverterFactory.create())
++            .build()
++    }
++
++    // Retrofit instance for GPT API with API key authorization
++    private val gptRetrofit: Retrofit by lazy {
++        Retrofit.Builder()
++            .baseUrl(BASE_URL_GPT)
++            .client(
++                client.newBuilder()
++                    .addInterceptor { chain ->
++                        val request = chain.request().newBuilder()
++                            .addHeader("Authorization", "Bearer ${BuildConfig.OPENAI_API_KEY}")
++                            .build()
++                        chain.proceed(request)
++                    }
++                    .build()
++            )
++            .addConverterFactory(GsonConverterFactory.create())
+             .build()
+     }
+ 
+     // Provide the HoroscopeApiService instance
+     val horoscopeService: HoroscopeApiService by lazy {
+-        retrofit.create(HoroscopeApiService::class.java)
++        horoscopeRetrofit.create(HoroscopeApiService::class.java)
++    }
++
++    // Provide the GptApiService instance
++    val gptService: GptApiService by lazy {
++        gptRetrofit.create(GptApiService::class.java)
+     }
+-}
+\ No newline at end of file
++}
++//import retrofit2.Retrofit
++//import retrofit2.converter.gson.GsonConverterFactory
++//
++//object ApiClient {
++//    // Base URL for the API
++//    private const val BASE_URL = "https://best-daily-astrology-and-horoscope-api.p.rapidapi.com/api/"
++//
++//    // Create a Retrofit instance with the base URL and Gson converter
++//    private val retrofit: Retrofit by lazy {
++//        Retrofit.Builder()
++//            .baseUrl(BASE_URL)
++//            .addConverterFactory(GsonConverterFactory.create()) // Use Gson for JSON parsing
++//            .build()
++//    }
++//
++//    // Provide the HoroscopeApiService instance
++//    val horoscopeService: HoroscopeApiService by lazy {
++//        retrofit.create(HoroscopeApiService::class.java)
++//    }
++//}
+\ No newline at end of file
+Index: gradle/libs.versions.toml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[versions]\r\nagp = \"8.6.0\"\r\nkotlin = \"1.9.0\"\r\ncoreKtx = \"1.15.0\"\r\njunit = \"4.13.2\"\r\njunitVersion = \"1.2.1\"\r\nespressoCore = \"3.6.1\"\r\nappcompat = \"1.7.0\"\r\nmaterial = \"1.12.0\"\r\nconstraintlayout = \"2.2.0\"\r\nlifecycleLivedataKtx = \"2.8.7\"\r\nlifecycleViewmodelKtx = \"2.8.7\"\r\nnavigationFragmentKtx = \"2.8.3\"\r\nnavigationUiKtx = \"2.8.3\"\r\nretrofit = \"2.9.0\"\r\ngson = \"2.9.0\"\r\n\r\n[libraries]\r\nandroidx-core-ktx = { group = \"androidx.core\", name = \"core-ktx\", version.ref = \"coreKtx\" }\r\njunit = { group = \"junit\", name = \"junit\", version.ref = \"junit\" }\r\nandroidx-junit = { group = \"androidx.test.ext\", name = \"junit\", version.ref = \"junitVersion\" }\r\nandroidx-espresso-core = { group = \"androidx.test.espresso\", name = \"espresso-core\", version.ref = \"espressoCore\" }\r\nandroidx-appcompat = { group = \"androidx.appcompat\", name = \"appcompat\", version.ref = \"appcompat\" }\r\nmaterial = { group = \"com.google.android.material\", name = \"material\", version.ref = \"material\" }\r\nandroidx-constraintlayout = { group = \"androidx.constraintlayout\", name = \"constraintlayout\", version.ref = \"constraintlayout\" }\r\nandroidx-lifecycle-livedata-ktx = { group = \"androidx.lifecycle\", name = \"lifecycle-livedata-ktx\", version.ref = \"lifecycleLivedataKtx\" }\r\nandroidx-lifecycle-viewmodel-ktx = { group = \"androidx.lifecycle\", name = \"lifecycle-viewmodel-ktx\", version.ref = \"lifecycleViewmodelKtx\" }\r\nandroidx-navigation-fragment-ktx = { group = \"androidx.navigation\", name = \"navigation-fragment-ktx\", version.ref = \"navigationFragmentKtx\" }\r\nandroidx-navigation-ui-ktx = { group = \"androidx.navigation\", name = \"navigation-ui-ktx\", version.ref = \"navigationUiKtx\" }\r\nretrofit = { group = \"com.squareup.retrofit2\", name = \"retrofit\", version.ref = \"retrofit\" }\r\nretrofit-gson-converter = { group = \"com.squareup.retrofit2\", name = \"converter-gson\", version.ref = \"gson\" }\r\n\r\n[plugins]\r\nandroid-application = { id = \"com.android.application\", version.ref = \"agp\" }\r\nkotlin-android = { id = \"org.jetbrains.kotlin.android\", version.ref = \"kotlin\" }\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradle/libs.versions.toml b/gradle/libs.versions.toml
+--- a/gradle/libs.versions.toml	(revision 0a7682a2522a9fcd8f6660aa65044925e1d32637)
++++ b/gradle/libs.versions.toml	(date 1730919600741)
+@@ -14,6 +14,8 @@
+ navigationUiKtx = "2.8.3"
+ retrofit = "2.9.0"
+ gson = "2.9.0"
++coroutines = "1.7.3"
++okhttp = "4.9.3"
+ 
+ [libraries]
+ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+@@ -29,6 +31,9 @@
+ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+ retrofit-gson-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "gson" }
++coroutinesAndroid = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
++okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
++okhttpLoggingInterceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+ 
+ [plugins]
+ android-application = { id = "com.android.application", version.ref = "agp" }
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"gradleJvm\" value=\"jbr-17\" />\r\n        <option name=\"resolveExternalAnnotations\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision 0a7682a2522a9fcd8f6660aa65044925e1d32637)
++++ b/.idea/gradle.xml	(date 1730919600751)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>

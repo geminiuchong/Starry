@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D7C6BF"
+    tools:context=".ui.match.MatchFragment">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Synastry"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/circle_container"
+        android:layout_marginTop="16dp" />
+
+    <!-- Circle Container -->
+    <LinearLayout
+        android:id="@+id/circle_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/text_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp">
+
+        <!-- First Circle -->
+        <FrameLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/circle_shape"
+            android:layout_marginEnd="8dp">
+
+            <ImageView
+                android:id="@+id/plus_icon_left"
+                android:layout_width="155dp"
+                android:layout_height="155dp"
+                android:src="@drawable/ic_add_circle"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
+        <!-- Second Circle -->
+        <FrameLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/circle_shape"
+            android:layout_marginStart="8dp">
+
+            <ImageView
+                android:id="@+id/plus_icon_right"
+                android:layout_width="155dp"
+                android:layout_height="155dp"
+                android:src="@drawable/ic_add_circle"
+                android:layout_gravity="center" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Match Button -->
+    <Button
+        android:id="@+id/button_view_match_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View match result"
+        android:textColor="@color/white"
+        android:backgroundTint="#FBC4BF"
+        app:layout_constraintTop_toBottomOf="@id/circle_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

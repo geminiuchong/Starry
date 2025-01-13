@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "997872498951",
+    "project_id": "starry-da53e",
+    "storage_bucket": "starry-da53e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997872498951:android:52a7451d4cf36244ac2da2",
+        "android_client_info": {
+          "package_name": "com.example.group3_starry"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNIWM0uM3jLqOG-eP8_ouuV54I76gn_1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

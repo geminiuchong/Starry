@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+<!--    <style name="Theme.Group3_Starry" parent="Theme.AppCompat.Light.DarkActionBar">-->
+<!--        &lt;!&ndash; Transparent system bars for edge-to-edge. &ndash;&gt;-->
+<!--        <item name="android:navigationBarColor">@android:color/holo_blue_light</item>-->
+<!--        <item name="android:statusBarColor">@android:color/holo_blue_light</item>-->
+<!--        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>-->
+<!--    </style>-->
+</resources>

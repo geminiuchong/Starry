@@ -1,0 +1,6 @@
+package com.example.group3_starry.network
+
+object ApiKeyProvider {
+//    const val OPENAI_API_KEY="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"
+    const val OPENAI_API_KEY="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"
+}
